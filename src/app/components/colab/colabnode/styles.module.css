@@ -1,0 +1,136 @@
+.colabnodewrapper {
+    /* border: 1px solid red; */
+    display: flex;
+    gap: 5rem;
+    /* padding: 1rem 0; */
+    padding: 16px;
+    width: 100%;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.colabnodewrapper:not(:first-child) {
+    border-top: 3px solid #2e2e2e
+}
+
+.colabnodewrapperexpanded {
+    /* border: 1px solid red; */
+    display: flex;
+    /* width: 100%; */
+    background-color: #242424;
+    /* width: max(max-content, 100%); */
+    width: min(100%, min-content);
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* border-top: 3px solid #232323 */
+}
+
+.colabnodeexpandedrow {
+    display: flex;
+    width: 100%;
+    /* overflow-x: auto; */
+}
+
+.colabnodewrapperexpanded:not(:first-child) {
+    /* Your styles here */
+    border-top: 3px solid #171717
+}
+
+.colabnodebasic {
+    /* border: 1px solid blue; */
+    flex: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.colabnodedata {
+    /* border: 1px solid blue; */
+    /* width: 50%; */
+    flex-basis: 50%;
+    /* max-width: 300px; */
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    padding: 16px;
+    max-width: 450px;
+    min-width: 400px;
+}
+
+.datamodualwrapper {
+    /* width: 50%; */
+    /* border: 1px solid yellow; */
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 16px;
+    border-radius: 16px;
+    background-color: #1c1c1c;
+}
+
+.datamodualcontainer {
+    /* padding: 16px; */
+    width: fit-content;
+}
+
+.matchconfidence {
+    /* margin-left: auto; */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.matchconfidencecolor {
+    /* background-color: red; */
+    width: 0.4em;
+    height: 0.4em;
+    border-radius: 50%;
+}
+
+.sector {
+    margin-left: auto;
+}
+
+.datamodualmetric {
+    font-size: 2em;
+    width: fit-content;
+}
+
+.datamodualname {
+    width: fit-content;
+    /* text-align: right; */
+}
+
+.projectwrapper {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.projectwrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.projectwrapper {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.projectmodulewrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 16px;
+    /* width: 400px !important; */
+    flex: 0 0 400px;
+}

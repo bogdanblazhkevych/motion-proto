@@ -1,0 +1,17 @@
+.progresswrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.progressbarfull{
+    height: 10px;
+    border-radius: 5px;
+    background-color: #161616;
+}
+
+.progressbarfill{
+    height: 100%;
+    background-color: #207894;
+    border-radius: inherit;
+}
