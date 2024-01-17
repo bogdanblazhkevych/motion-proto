@@ -112,19 +112,14 @@
     display: flex;
     width: 100%;
     overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .projectwrapper::-webkit-scrollbar {
     display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.projectwrapper {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
-}
 
 .projectmodulewrapper {
     display: flex;
@@ -133,4 +128,6 @@
     padding: 16px;
     /* width: 400px !important; */
     flex: 0 0 400px;
+    max-width: 400px;
+    overflow: hidden;
 }

@@ -8,9 +8,14 @@ export default function Progressbar(props: ProgressPropsInterface) {
     const { progress } = props
     return(
         <div className={styles.progresswrapper}>
-            <p>
-                Progress
-            </p>
+            <div className={styles.titlecontainer}>
+                <p>
+                    Progress
+                </p>
+                <p>
+                    {progress}%
+                </p>
+            </div>
             <div className={styles.progressbarfull}>
                 <div className={styles.progressbarfill} style={{width: `${progress}%`}}>
                 </div>

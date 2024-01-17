@@ -35,6 +35,7 @@ export default function Dragable({ children }: DragablePropsInterface) {
 
         setInitialTranslateCoordinates((prev) => {
             const targetNode = e.currentTarget as HTMLDivElement;
+            if (!targetNode) return prev
             const matrix = new DOMMatrixReadOnly(window.getComputedStyle(targetNode).getPropertyValue('transform'));
             prev.x = matrix.m41
             prev.y = matrix.m42

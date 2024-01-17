@@ -4,6 +4,8 @@ import { ColabNodeInterface, ProjectInterface } from '../data'
 import styles from './styles.module.css'
 import Progress from '../../progressbar/progressbar'
 import Progressbar from '../../progressbar/progressbar'
+import ProjectColaborators from '../../projectcontributors/projectcontributors'
+import ProjectContributors from '../../projectcontributors/projectcontributors'
 
 interface ColabNodePropsInterface {
     data: ColabNodeInterface
@@ -120,8 +122,8 @@ function ProjectModule(props: ProjectModulePropsInterface) {
         <div className={styles.projectmodulewrapper}>
             <p>{project.projectName}</p>
             <p>{project.projectDescription}</p>
-            <p>{project.progress}</p>
             <Progressbar progress={project.progress}/>
+            <ProjectContributors colaborators={project.contributors} />
         </div>
     )
 }

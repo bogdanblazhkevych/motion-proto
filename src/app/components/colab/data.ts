@@ -24,7 +24,7 @@ export interface ProjectInterface {
   progress: number
 }
 
-interface UserInterface {
+export interface UserInterface {
   name: string,
   profilePicture: string,
 }
@@ -49,6 +49,58 @@ export const mockData: ColabModualDataInterface = [
             {
               name: "John Smith",
               profilePicture: "https://randomuser.me/api/portraits/men/32.jpg"
+            },
+            {
+              name: "Jane Doe",
+              profilePicture: "https://randomuser.me/api/portraits/women/33.jpg"
+            },
+            {
+              name: "Jane Doe",
+              profilePicture: "https://randomuser.me/api/portraits/women/33.jpg"
+            },
+            {
+              name: "Jane Doe",
+              profilePicture: "https://randomuser.me/api/portraits/women/33.jpg"
+            },
+            {
+              name: "Jane Doe",
+              profilePicture: "https://randomuser.me/api/portraits/women/33.jpg"
+            },
+            {
+              name: "Jane Doe",
+              profilePicture: "https://randomuser.me/api/portraits/women/33.jpg"
+            },
+            {
+              name: "Jane Doe",
+              profilePicture: "https://randomuser.me/api/portraits/women/33.jpg"
+            },
+            {
+              name: "Jane Doe",
+              profilePicture: "https://randomuser.me/api/portraits/women/33.jpg"
+            },
+            {
+              name: "Jane Doe",
+              profilePicture: "https://randomuser.me/api/portraits/women/33.jpg"
+            },
+            {
+              name: "Jane Doe",
+              profilePicture: "https://randomuser.me/api/portraits/women/33.jpg"
+            },
+            {
+              name: "Jane Doe",
+              profilePicture: "https://randomuser.me/api/portraits/women/33.jpg"
+            },
+            {
+              name: "Jane Doe",
+              profilePicture: "https://randomuser.me/api/portraits/women/33.jpg"
+            },
+            {
+              name: "Jane Doe",
+              profilePicture: "https://randomuser.me/api/portraits/women/33.jpg"
+            },
+            {
+              name: "Jane Doe",
+              profilePicture: "https://randomuser.me/api/portraits/women/33.jpg"
             },
             {
               name: "Jane Doe",

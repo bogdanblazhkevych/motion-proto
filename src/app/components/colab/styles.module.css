@@ -21,6 +21,7 @@
     display: flex;
     padding: 16px;
     border-bottom: 3px solid #2e2e2e;
+    justify-content: space-between;
 }
 
 .colablist{
@@ -42,4 +43,11 @@
 
 .datamodualmetric{
     align-items: flex-end;
+}
+
+.close{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
 }
