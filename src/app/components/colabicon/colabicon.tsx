@@ -2,10 +2,11 @@
 
 import { Dispatch, SetStateAction } from 'react'
 import styles from './styles.module.css'
+import { openModulesInterface } from '@/app/dashboard/page'
 
 interface ColabIconPropsInterface {
-    setOpenModules: Dispatch<SetStateAction<string[]>>,
-    openModules: string[]
+    setOpenModules: Dispatch<SetStateAction<openModulesInterface>>,
+    openModules: openModulesInterface
 }
 
 export default function ColabIcon(props: ColabIconPropsInterface) {
@@ -16,13 +17,10 @@ export default function ColabIcon(props: ColabIconPropsInterface) {
         const element = e.target as HTMLElement
         const id = element.id
 
-        if (openModules.includes(id)) return
-
         setOpenModules((prev) => {
-            console.log("here")
-            const newArr = [...prev]
-            newArr.push(id)
-            return newArr
+            const newState = { ...prev }
+            newState[id as keyof openModulesInterface] = true;
+            return newState
         })
     }
 
