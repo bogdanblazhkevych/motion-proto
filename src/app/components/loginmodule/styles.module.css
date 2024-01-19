@@ -1,4 +1,5 @@
 .loginwrapper{
+    /* border: 1px solid red; */
     min-width: 500px;
     background-color: #222222;
     padding: 3rem;
@@ -6,6 +7,10 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    background: rgba(0, 0, 0, 0.621);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    transition: 0.3s ease;
 }
 
 .logowrapper{
@@ -78,10 +83,10 @@
     width: 100%;
     box-sizing: border-box;
 
-    background: linear-gradient(to right, #1e7cbf, #1e7cbf 50%, #232323 50%);
+    background: linear-gradient(to right, #1e7cbf, #1e7cbf 50%, rgba(35, 35, 35, 0) 50%);
     background-size: 200% 100%;
     background-position: 100% 100%;
-    transition: background-position 0.3s ease-out, color 0.3s ease-in-out;
+    transition: background-position 0.5s ease-out, color 0.3s ease-in-out;
 }
 
 .submitbutton:hover {
