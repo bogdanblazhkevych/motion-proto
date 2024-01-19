@@ -1,0 +1,45 @@
+.backgroundsvg{
+    /* border: 1px solid red; */
+    position: absolute;
+    /* width: 20px; */
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(70px);
+    opacity: 50%;
+  }
+  .blobone{
+    animation: slideX 10s linear infinite alternate;
+  }
+  .blobtwo{
+    animation: slideY 15s linear infinite alternate-reverse;
+  }
+  .blobthree{
+    animation: slideX 20s linear infinite alternate;
+  }
+  .blobfour{
+    animation: slideY 10s linear infinite alternate-reverse;
+  }
+  .blobfive{
+    animation: slideX 15s linear infinite alternate;
+  }
+  .blobsix{
+    animation: slideX 10s linear infinite alternate-reverse;
+  }
+  
+  @keyframes slideX {
+    0% {
+      transform: translateX(-5%);
+    }
+    100% {
+      transform: translateX(5%);
+    }
+  }
+  @keyframes slideY {
+    0% {
+      transform: translateY(5%);
+    }
+    100% {
+      transform: translateY(-5%);
+    }
+  }
