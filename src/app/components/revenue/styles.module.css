@@ -1,11 +1,59 @@
 .revenuewrapper{
+    /* border: 1px solid red; */
     width: 600px;
-    height: 300px;
-    border: 1px solid red;
+    height: fit-content;
+    display: flex;
+    padding: 16px;
+    border-radius: 16px;
+    gap: 1rem;
+    background-color: #222222;
 }
 
-/* .revenuewrapper canvas {
-    width: 600px;
-    height: 200px;
-    object-fit: contain;
-} */
+.chartwrapper{
+    /* border: 1px solid red; */
+    flex: 1
+}
+
+.headingwrapper{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+
+.changewidget{
+    /* border: 1px solid red; */
+    display: flex;
+    width: fit-content;
+    font-size: 2rem;
+    padding: 8px;
+    border-radius: 16px;
+    gap: 1rem
+    /* background-color: #2A2A2A; */
+}
+
+.changewidget[data-direction="up"] {
+    color: rgb(0, 255, 153);
+    background-color: rgba(0, 255, 153, 0.135);
+}
+
+.changewidget[data-direction="down"] {
+    color: rgb(255, 0, 32);
+    background-color: rgba(255, 0, 32, 0.135);
+}
+
+.widgetarrow{
+    /* border: 1px solid red; */
+    display: grid;
+    place-items: center;
+}
+
+.title{
+    font-size: 2rem;
+    white-space: no-wrap;
+}
+.headingmetric{
+    font-size: 4rem;
+}
