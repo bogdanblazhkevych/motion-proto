@@ -1,0 +1,11 @@
+.revenuewrapper{
+    width: 600px;
+    height: 300px;
+    border: 1px solid red;
+}
+
+/* .revenuewrapper canvas {
+    width: 600px;
+    height: 200px;
+    object-fit: contain;
+} */

@@ -1,7 +1,9 @@
 'use client'
 
+import Canvas from '../components/canvas/canvas'
 import Colab from '../components/colab/colab'
 import ColabIcon from '../components/colabicon/colabicon'
+import Revenue from '../components/revenue/revenue'
 import styles from './styles.module.css'
 import { useEffect, useState } from 'react'
 
@@ -22,6 +24,8 @@ export default function Dashboard() {
     <main className={styles.main}>
       {openModules.colab && <Colab openModules={openModules} setOpenModules={setOpenModules}/>}
       <ColabIcon openModules={openModules} setOpenModules={setOpenModules}/>
+      <Revenue />
+      {/* <Canvas /> */}
     </main>
   )
 }
