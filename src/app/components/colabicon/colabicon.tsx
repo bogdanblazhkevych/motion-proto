@@ -2,7 +2,7 @@
 
 import { Dispatch, SetStateAction } from 'react'
 import styles from './styles.module.css'
-import { openModulesInterface } from '@/app/dashboard/page'
+import { openModulesInterface } from '@/app/dashboard/dashboard'
 
 interface ColabIconPropsInterface {
     setOpenModules: Dispatch<SetStateAction<openModulesInterface>>,

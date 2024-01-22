@@ -1,0 +1,96 @@
+.loginwrapper{
+    /* border: 1px solid red; */
+    min-width: 500px;
+    background-color: #222222;
+    padding: 3rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    background: rgba(0, 0, 0, 0.621);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    transition: 0.3s ease;
+}
+
+.logowrapper{
+    /* border: 1px solid red; */
+    position: relative;
+    height: 100px;
+    overflow: hidden
+}
+
+.loginwrapper form{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem
+}
+
+.inputgroup {
+    width: auto;
+    position: relative;
+}
+
+.inputgroup input {
+    font-size: 100%;
+    padding: 1.25rem 0.5rem 0.5rem 0.5rem;
+    outline: none;
+    border: 2px solid #484848;
+    background-color: transparent;
+    border-radius: 10px;
+    transition: border-color 0.3s ease-in-out;
+    width: 100%;
+    color: #B4B4B4;
+}
+
+.inputgroup label {
+    /* border: 1px solid white; */
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    padding-left: 0.5rem;
+    padding-top: 0.875rem;
+    color: #B4B4B4;
+    pointer-events: none;
+    transition: all 0.3s ease;
+
+}
+
+.inputgroup :is(input:focus, input:valid)~label {
+    transform-origin: 0.5rem 0.875rem;
+    transform: translateY(-0.65rem) scale(0.8);
+}
+.inputgroup :is(input:focus) {
+    border: 2px solid #606060;
+}
+
+.inputgroup input:valid {
+    border: 2px solid #606060;
+}
+
+.submitbutton {
+    all: unset;
+    color: #B4B4B4;
+    font-size: clamp(16px, 3vw, 22px);
+    padding: 0.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid #1e7cbf;
+    text-align: center;
+    position: relative;
+    /* box-sizing: content-box; */
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+
+    background: linear-gradient(to right, #1e7cbf, #1e7cbf 50%, rgba(35, 35, 35, 0) 50%);
+    background-size: 200% 100%;
+    background-position: 100% 100%;
+    transition: background-position 0.5s ease-in-out, color 0.3s ease-in-out;
+    background-repeat: no-repeat;
+}
+
+.submitbutton:hover {
+    background-position: 0% 100%;
+    color: black
+}
