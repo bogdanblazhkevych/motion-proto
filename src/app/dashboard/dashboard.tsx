@@ -22,7 +22,7 @@ export default function Dashboard() {
       {/* {openModules.colab && <Colab openModules={openModules} setOpenModules={setOpenModules}/>} */}
       {/* <ColabIcon openModules={openModules} setOpenModules={setOpenModules}/> */}
       <Revenue />
-      <MarketShare />
+      {/* <MarketShare /> */}
     </div>
   )
 }

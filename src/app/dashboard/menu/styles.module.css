@@ -1,6 +1,6 @@
 .menuwrapper{
     /* border: 1px solid yellow; */
-    width: 300px;
+    width: 250px;
     display: flex;
     flex-direction: column;
     padding: 16px;
@@ -26,14 +26,14 @@
 
 .logocontainer{
     /* border: 1px solid blue; */
-    transform: translateY(-100px);
+    transform: translateY(-60px);
 }
 
 .linkwrapper{
     /* border: 1px solid red; */
     display: flex;
     gap: 1rem;
-    font-size: 2rem;
+    font-size: 1.6rem;
     align-items: center;
     color: #A6A6A6;
     cursor: pointer;

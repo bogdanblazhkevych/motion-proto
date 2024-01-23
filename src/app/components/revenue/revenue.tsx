@@ -22,8 +22,8 @@ import { Chart } from 'react-chartjs-2'
 
 export default function Revenue() {
     const [gradient, setGradient] = useState<CanvasGradient>()
-    const [borderColor, setBorderColor] = useState<string>() 
-    const [metrics, setMetrics] = useState<{change: number, total: number}>({change: 0, total: 0})
+    const [borderColor, setBorderColor] = useState<string>()
+    const [metrics, setMetrics] = useState<{ change: number, total: number }>({ change: 0, total: 0 })
 
     const chartRef = useRef<ChartJS>(null);
     ChartJS.register(
@@ -91,7 +91,7 @@ export default function Revenue() {
                     total: prev.total + current
                 }
             }
-        }, {change: data[0], total: data[0]})
+        }, { change: data[0], total: data[0] })
     }
 
     const getRevenueDataMetrics = () => {
@@ -145,10 +145,13 @@ export default function Revenue() {
 
     return (
         <div className={styles.revenuewrapper}>
-            <div className={styles.headingwrapper}>
-                <div className={styles.title}>
-                    Total Revenue
-                </div>
+            <div className={styles.title}>
+                Total Revenue
+            </div>
+            <div className={styles.chartwrapper}>
+                <Chart ref={chartRef} type='line' data={data} options={options} />
+            </div>
+            <div className={styles.metricswrapper}>
                 <div className={styles.headingmetric}>
                     {inCurrency(metrics.total)}
                 </div>
@@ -161,9 +164,6 @@ export default function Revenue() {
                         {metrics.change > 0 ? <FaArrowTrendUp /> : <FaArrowTrendDown />}
                     </div>
                 </div>
-            </div>
-            <div className={styles.chartwrapper}>
-                <Chart ref={chartRef} type='line' data={data} options={options} />
             </div>
         </div>
     )
