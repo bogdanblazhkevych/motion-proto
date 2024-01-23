@@ -17,17 +17,12 @@ export default function Dashboard() {
 
   const [openModules, setOpenModules] = useState<openModulesInterface>({colab: false})
 
-  // useEffect(() => {
-  //   console.log(openModules)
-  // }, [openModules])
-
   return (
-    <main className={styles.main}>
-      {openModules.colab && <Colab openModules={openModules} setOpenModules={setOpenModules}/>}
-      <ColabIcon openModules={openModules} setOpenModules={setOpenModules}/>
+    <div className={styles.dashboardwrapper}>
+      {/* {openModules.colab && <Colab openModules={openModules} setOpenModules={setOpenModules}/>} */}
+      {/* <ColabIcon openModules={openModules} setOpenModules={setOpenModules}/> */}
       <Revenue />
       <MarketShare />
-      {/* <Canvas /> */}
-    </main>
+    </div>
   )
 }

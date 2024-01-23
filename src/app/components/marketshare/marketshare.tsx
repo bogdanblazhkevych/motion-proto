@@ -69,6 +69,16 @@ export default function MarketShare() {
         }).format(number);
     }
 
+    const getMarketShare = (revenue: number) => {
+        const totalRevenue = companiesData.reduce((accum, current) => {
+            return accum + current
+        }, 0)
+
+        const fractionalMarketShare = Number((revenue / totalRevenue).toFixed(4))
+
+        return fractionalMarketShare * 100 + "%"
+    }
+
     const data = {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [
@@ -110,6 +120,7 @@ export default function MarketShare() {
         },
         events: []
     };
+
     return (
         <div className={styles.marketsharewrapper}>
             <div className={styles.title}>
@@ -119,12 +130,22 @@ export default function MarketShare() {
                 <Chart ref={chartRef} type='doughnut' data={data} options={options} />
             </div>
             <div className={styles.metricwrapper}>
-                <div className={styles.revenuemetric}>
-                    {/* {inCurrency(companiesData[0])} */}
+                <div className={styles.metric}>
+                    <div className={styles.metricvalue}>
+                        {inCurrency(companiesData[0])}
+                    </div>
+                    <div className={styles.metricname}>
+                        Total Revenue
+                    </div>
                 </div>
-            </div>
-            <div className={styles.metricwrapper}>
-
+                <div className={styles.metric}>
+                    <div className={styles.metricvalue}>
+                        {getMarketShare(companiesData[0])}
+                    </div>
+                    <div className={styles.metricname}>
+                        Market Share
+                    </div>
+                </div>
             </div>
         </div>
     )

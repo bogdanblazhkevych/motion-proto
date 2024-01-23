@@ -1,5 +1,5 @@
 .marketsharewrapper{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 400px;
     height: fit-content;
     display: flex;
@@ -11,10 +11,24 @@
 }
 
 .chartwrapper{
-    /* border: 1px solid red; */
     width: 100%;
 }
 
 .title{
     font-size: 2rem;
+}
+
+.metricvalue{
+    font-size: 3rem;
+}
+
+.metricwrapper{
+    display: flex;
+}
+.metric{
+    width: 50%;
+}
+
+.metricname{
+    color: #A6A6A6
 }
