@@ -1,10 +1,9 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { RevenueDataInterface, revenueData } from '../colab/data'
+import { revenueData } from '../colab/data'
 import { FaArrowTrendUp } from "react-icons/fa6";
 import { FaArrowTrendDown } from "react-icons/fa6";
-import { Line } from 'react-chartjs-2';
 import styles from './styles.module.css'
 import {
     Chart as ChartJS,

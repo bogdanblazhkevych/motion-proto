@@ -1,0 +1,20 @@
+.marketsharewrapper{
+    border: 1px solid red;
+    width: 400px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 16px;
+    gap: 1rem;
+    background-color: #222222;
+}
+
+.chartwrapper{
+    /* border: 1px solid red; */
+    width: 100%;
+}
+
+.title{
+    font-size: 2rem;
+}
