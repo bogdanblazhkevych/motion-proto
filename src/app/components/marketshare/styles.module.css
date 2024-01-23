@@ -1,0 +1,34 @@
+.marketsharewrapper{
+    /* border: 1px solid red; */
+    width: 400px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 16px;
+    gap: 1rem;
+    background-color: #222222;
+}
+
+.chartwrapper{
+    width: 100%;
+}
+
+.title{
+    font-size: 2rem;
+}
+
+.metricvalue{
+    font-size: 3rem;
+}
+
+.metricwrapper{
+    display: flex;
+}
+.metric{
+    width: 50%;
+}
+
+.metricname{
+    color: #A6A6A6
+}

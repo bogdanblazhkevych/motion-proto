@@ -1,8 +1,9 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { RevenueDataInterface, revenueData } from '../colab/data'
-import { Line } from 'react-chartjs-2';
+import { revenueData } from '../colab/data'
+import { FaArrowTrendUp } from "react-icons/fa6";
+import { FaArrowTrendDown } from "react-icons/fa6";
 import styles from './styles.module.css'
 import {
     Chart as ChartJS,
@@ -20,6 +21,10 @@ import { Chart } from 'react-chartjs-2'
 
 
 export default function Revenue() {
+    const [gradient, setGradient] = useState<CanvasGradient>()
+    const [borderColor, setBorderColor] = useState<string>() 
+    const [metrics, setMetrics] = useState<{change: number, total: number}>({change: 0, total: 0})
+
     const chartRef = useRef<ChartJS>(null);
     ChartJS.register(
         CategoryScale,
@@ -32,25 +37,27 @@ export default function Revenue() {
         Filler
     )
 
-    const [gradient, setGradient] = useState<CanvasGradient>()
-    const [borderColor, setBorderColor] = useState<string>() 
 
     useEffect(() => {
+        const metrics = getRevenueDataMetrics();
+        setMetrics(metrics);
+    }, [])
+
+    useEffect(() => {
+
         const chart = chartRef.current;
         if (!chart) return
         const ctx = chart.ctx
         if (!ctx) return
-        const gradient = createGradient(ctx, chart.chartArea.height, revenueData)
+        const gradient = createGradient(ctx, chart.chartArea.height)
         setGradient(gradient)
-        const borderColor = createBorderColor(revenueData);
+        const borderColor = createBorderColor();
         setBorderColor(borderColor)
-    }, [])
+    }, [metrics])
 
-    const createGradient = (ctx: CanvasRenderingContext2D, height: number, data: RevenueDataInterface[]): CanvasGradient => {
-        const dataList = data.map((node) => node.revenue)
-        const change = calculateChange(dataList);
+    const createGradient = (ctx: CanvasRenderingContext2D, height: number): CanvasGradient => {
         var gradient = ctx.createLinearGradient(0, 0, 0, height);
-        if (change > 0) {
+        if (metrics.change > 0) {
             gradient.addColorStop(0, 'rgba(0, 255, 155,0.5)');
             gradient.addColorStop(1, 'rgba(101,214,164,0)');
         } else {
@@ -60,24 +67,43 @@ export default function Revenue() {
         return gradient
     }
 
-    const createBorderColor = (data: RevenueDataInterface[]): string => {
-        const dataList = data.map((node) => node.revenue)
-        const change = calculateChange(dataList);
-        if (change > 0) {
+    const createBorderColor = (): string => {
+        if (metrics.change > 0) {
             return 'rgb(61,182,129)'
         } else {
             return 'rgb(229,82,100)'
         }
     }
 
-    const calculateChange = (data: number[]) => {
-        return data.reduce((total, current, index, array) => {
+    const calculateArrayMetrics = (data: number[]): {
+        change: number,
+        total: number
+    } => {
+        return data.reduce((prev, current, index, array) => {
             if (current > array[index - 1]) {
-                return total + current
+                return {
+                    change: prev.change + current,
+                    total: prev.total + current
+                }
             } else {
-                return total - current
+                return {
+                    change: prev.change - current,
+                    total: prev.total + current
+                }
             }
-        })
+        }, {change: data[0], total: data[0]})
+    }
+
+    const getRevenueDataMetrics = () => {
+        const dataList = revenueData.map((node) => node.revenue)
+        return calculateArrayMetrics(dataList);
+    }
+
+    const inCurrency = (number: number) => {
+        return Intl.NumberFormat('en-US', {
+            notation: "compact",
+            maximumFractionDigits: 1
+        }).format(number);
     }
 
     const data = {
@@ -119,7 +145,26 @@ export default function Revenue() {
 
     return (
         <div className={styles.revenuewrapper}>
-            <Chart ref={chartRef} type='line' data={data} options={options} />
+            <div className={styles.headingwrapper}>
+                <div className={styles.title}>
+                    Total Revenue
+                </div>
+                <div className={styles.headingmetric}>
+                    {inCurrency(metrics.total)}
+                </div>
+                <div className={styles.changewidget} data-direction={metrics.change > 0 ? "up" : "down"}>
+                    <div className={styles.widgetmetric}>
+                        {metrics.change > 0 && "+"}
+                        {inCurrency(metrics.change)}
+                    </div>
+                    <div className={styles.widgetarrow}>
+                        {metrics.change > 0 ? <FaArrowTrendUp /> : <FaArrowTrendDown />}
+                    </div>
+                </div>
+            </div>
+            <div className={styles.chartwrapper}>
+                <Chart ref={chartRef} type='line' data={data} options={options} />
+            </div>
         </div>
     )
 }
