@@ -8,6 +8,7 @@ import { MdAnalytics } from "react-icons/md";
 import { FaShoppingBag } from "react-icons/fa";
 import { MdConnectWithoutContact } from "react-icons/md";
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 export default function Menu() {
 
@@ -21,14 +22,14 @@ export default function Menu() {
                 </div>
             </div>
             <div className={styles.links}>
-                <div className={`${styles.linkwrapper} ${pathname === '/dashboard' && styles.linkwrapperactive}`}>
+                <Link href="/dashboard" className={`${styles.linkwrapper} ${pathname === '/dashboard' && styles.linkwrapperactive}`}>
                     <div className={styles.linkIcon}>
                         <MdSpaceDashboard />
                     </div>
                     <div className={styles.linkName}>
                         Dashboard
                     </div>
-                </div>
+                </Link>
                 <div className={styles.linkwrapper}>
                     <div className={styles.linkIcon}>
                         <MdAnalytics />
@@ -45,14 +46,14 @@ export default function Menu() {
                         Idea Lab
                     </div>
                 </div>
-                <div className={styles.linkwrapper}>
+                <Link href="/dashboard/ecosystems" className={styles.linkwrapper}>
                     <div className={styles.linkIcon}>
                         <MdConnectWithoutContact />
                     </div>
                     <div className={styles.linkName}>
                         Ecosystems
                     </div>
-                </div>
+                </Link>
                 <div className={styles.linkwrapper}>
                     <div className={styles.linkIcon}>
                         <FaShoppingBag />

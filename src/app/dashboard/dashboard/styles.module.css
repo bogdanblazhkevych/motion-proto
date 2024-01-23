@@ -1,0 +1,28 @@
+.dashboardwrapper {
+    /* border: 1px solid blue; */
+    flex: 1;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 15px;
+}
+
+.boxone {
+    grid-area: 1 / 1 / 2 / 3;
+    overflow: hidden;
+}
+.boxtwo {
+    grid-area: 1 / 3 / 2 / 5;
+    overflow: hidden;
+}
+
+.boxthree {
+    grid-area: 1 / 5 / 2 / 7;
+    overflow: hidden;
+}
+.boxfour {
+    grid-area: 2 / 5 / 4 / 7; 
+    overflow: hidden;
+}

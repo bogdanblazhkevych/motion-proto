@@ -1,4 +1,4 @@
-import Dashboard from './dashboard'
+import Dashboard from './dashboard/dashboard'
 import Menu from './menu/menu'
 import styles from './styles.module.css'
 

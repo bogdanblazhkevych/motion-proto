@@ -3,14 +3,3 @@
     height: 100vh;
     display: flex;
 }
-
-.dashboardwrapper {
-    /* border: 1px solid blue; */
-    flex: 1;
-    padding: 16px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 16px;
-    grid-row-gap: 15px;
-}

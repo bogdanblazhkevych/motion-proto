@@ -3,7 +3,7 @@ import { mockData } from './data'
 import ColabNode from './colabnode/colabnode'
 import Dragable from '../dragable/dragable'
 import { Dispatch, SetStateAction } from 'react'
-import { openModulesInterface } from '@/app/dashboard/dashboard'
+import { openModulesInterface } from '@/app/dashboard/dashboard/dashboard'
 
 interface ColabPropsInterface {
     setOpenModules: Dispatch<SetStateAction<openModulesInterface>>,

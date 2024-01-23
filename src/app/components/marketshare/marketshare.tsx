@@ -34,19 +34,20 @@ export default function MarketShare() {
     const [companiesData, setCompaniesData] = useState<number[]>([])
 
     useEffect(() => {
-        const healthCompanies = rawJson.reduce((accum: any[], current, index, arr) => {
-            if (current.industry !== 'Health' || typeof current.revenue !== 'string') {
+        const healthCompanies = rawJson.reduce((accum: any[], current) => {
+            const entry = {...current}
+            if (entry.industry !== 'Health' || typeof entry.revenue !== 'string') {
                 return accum
             }
-            const tempArr = current.revenue.split(' ')
+            const tempArr = entry.revenue.split(' ')
             let revenueNumber = 0
             if (tempArr[1] === 'Million') {
                 revenueNumber = Number(tempArr[0]) * 1000000
             } else if (tempArr[1] === 'Billion') {
                 revenueNumber = Number(tempArr[0]) * 1000000000
             }
-            current.revenue = revenueNumber as any
-            accum.push(current)
+            entry.revenue = revenueNumber as any
+            accum.push(entry)
             return accum
         }, [])
 
@@ -57,9 +58,6 @@ export default function MarketShare() {
         const healthCompaniesTopTen = healthCompaniesSorted.slice(0, 10)
 
         setCompaniesData(healthCompaniesTopTen)
-
-        console.log("rawjson length: ", rawJson.length)
-        console.log(healthCompanies.length)
     }, [])
 
     const inCurrency = (number: number) => {
@@ -100,7 +98,7 @@ export default function MarketShare() {
     };
 
     const options = {
-        // maintainAspectRatio: false,
+        maintainAspectRatio: false,
         responsive: true,
         plugins: {
             legend: {
