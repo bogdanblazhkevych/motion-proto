@@ -1,17 +1,3 @@
 .motiontext{
-    /* fill: #7F7F7F */
     fill: #B4B4B4
-    /* fill: var(--light-5); */
-}
-.logosvg{
-    /* border: 1px solid blue; */
-    position: absolute;
-    top: 0;
-    transform: translateY(-150px);
-    /* position: relative; */
-}
-
-.logogroup{
-    /* position: absolute; */
-    /* transform: translateY(-100%); */
 }
