@@ -31,7 +31,9 @@ export default function LoginModule() {
     return(
         <div className={styles.loginwrapper}>
             <div className={styles.logowrapper}>
-                <Logo />
+                <div className={styles.logocontainer}>
+                    <Logo />
+                </div>
             </div>
             <form onSubmit={handleSubmit}>
                 <div className={styles.inputgroup}>

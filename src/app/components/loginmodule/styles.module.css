@@ -20,6 +20,10 @@
     overflow: hidden
 }
 
+.logocontainer{
+    transform: translateY(-150px);
+}
+
 .loginwrapper form{
     display: flex;
     flex-direction: column;

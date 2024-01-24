@@ -1,4 +1,62 @@
 .menuwrapper{
-    border: 1px solid yellow;
-    width: 100px
+    /* border: 1px solid yellow; */
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: #0a0a0a;
+    /* align-items: center; */
+}
+
+.logowrapper{
+    /* border: 1px solid red; */
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.links{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* width: fit-content; */
+}
+
+.logocontainer{
+    /* border: 1px solid blue; */
+    transform: translateY(-60px);
+}
+
+.linkwrapper{
+    /* border: 1px solid red; */
+    display: flex;
+    gap: 1rem;
+    font-size: 1.6rem;
+    align-items: center;
+    color: #A6A6A6;
+    cursor: pointer;
+    position: relative;
+}
+
+.linkwrapperactive{
+    color: #EEEEEE
+}
+
+.linkwrapperactive::after{
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 50px;
+    background-color: rgb(4,122,166);
+    right: -16px;
+    border-radius: 10px 0 0 10px;
+}
+
+.linkIcon{
+    /* border: 1px solid blue; */
+    display: grid;
+    place-items: center;
+    font-size: 1.4em;
 }

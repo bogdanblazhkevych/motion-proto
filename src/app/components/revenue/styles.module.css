@@ -1,33 +1,43 @@
 .revenuewrapper{
     /* border: 1px solid red; */
-    width: 600px;
-    height: fit-content;
+    width: 100%;
+    height: 100%;
     display: flex;
+    flex-direction: column;
     padding: 16px;
     border-radius: 16px;
-    gap: 1rem;
     background-color: #222222;
+    justify-content: space-between;
 }
 
 .chartwrapper{
     /* border: 1px solid red; */
-    flex: 1
+    height: 50%;
+    /* flex: 1 */
 }
 
-.headingwrapper{
+.metricswrapper{
     /* border: 1px solid red; */
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
 }
 
-
+.headingmetric{
+    font-size: 3rem;
+}
+.title{
+    /* border: 1px solid red; */
+    font-size: 1.8rem;
+    white-space: no-wrap;
+}
 
 .changewidget{
     /* border: 1px solid red; */
+    height: fit-content;
     display: flex;
     width: fit-content;
-    font-size: 2rem;
+    font-size: 1.2rem;
     padding: 8px;
     border-radius: 16px;
     gap: 1rem
@@ -48,12 +58,4 @@
     /* border: 1px solid red; */
     display: grid;
     place-items: center;
-}
-
-.title{
-    font-size: 2rem;
-    white-space: no-wrap;
-}
-.headingmetric{
-    font-size: 4rem;
 }
