@@ -19,8 +19,12 @@ import {
 } from 'chart.js'
 import { Chart } from 'react-chartjs-2'
 
+interface GraphWidgetPropsInterface {
+    data: unknown
+}
 
-export default function Revenue() {
+export default function Revenue(props: GraphWidgetPropsInterface) {
+    const { data } = props
     const [gradient, setGradient] = useState<CanvasGradient>()
     const [borderColor, setBorderColor] = useState<string>()
     const [metrics, setMetrics] = useState<{ change: number, total: number }>({ change: 0, total: 0 })
@@ -106,7 +110,7 @@ export default function Revenue() {
         }).format(number);
     }
 
-    const data = {
+    const ChartData = {
         labels: revenueData.map((node) => node.date),
         datasets: [
             {
@@ -149,7 +153,7 @@ export default function Revenue() {
                 Total Revenue
             </div>
             <div className={styles.chartwrapper}>
-                <Chart ref={chartRef} type='line' data={data} options={options} />
+                <Chart ref={chartRef} type='line' data={ChartData} options={options} />
             </div>
             <div className={styles.metricswrapper}>
                 <div className={styles.headingmetric}>
