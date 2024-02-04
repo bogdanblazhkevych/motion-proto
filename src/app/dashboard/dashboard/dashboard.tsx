@@ -1,5 +1,6 @@
 'use client'
 
+import Notifications from '@/app/components/notifications/notifications'
 import Canvas from '../../components/canvas/canvas'
 import Colab from '../../components/colab/colab'
 import ColabIcon from '../../components/colabicon/colabicon'
@@ -28,7 +29,7 @@ export default function Dashboard() {
         <Revenue />
       </div>
       <div className={styles.boxthree}>
-        <Revenue />
+        <Notifications />
       </div>
       <div className={styles.boxfour}>
         <MarketShare />

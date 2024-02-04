@@ -20,7 +20,7 @@ import {
 import { Chart } from 'react-chartjs-2'
 
 interface GraphWidgetPropsInterface {
-    data: unknown
+    data?: unknown
 }
 
 export default function Revenue(props: GraphWidgetPropsInterface) {
