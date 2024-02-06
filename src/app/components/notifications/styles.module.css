@@ -23,30 +23,18 @@
     overflow-y: scroll;
 }
 
-/* Styles for the scrollbar track */
 .notificationscontainer::-webkit-scrollbar {
     width: 5px;
-    /* Width of the scrollbar */
 }
-
-/* Styles for the scrollbar handle */
 .notificationscontainer::-webkit-scrollbar-thumb {
     background-color: rgb(25, 25, 25);
-    /* Color of the scrollbar handle */
     border-radius: 6px;
-    /* Border radius to make it rounded */
 }
-
-/* Styles for the scrollbar track on hover */
 .notificationscontainer::-webkit-scrollbar-track {
     background-color: rgba(0, 0, 0, 0);
-    /* Color of the scrollbar track */
 }
-
-/* Styles for the scrollbar handle on hover */
 .notificationscontainer::-webkit-scrollbar-thumb:hover {
     background-color: rgb(20, 20, 20);
-    /* Color of the scrollbar handle on hover */
 }
 
 .title {

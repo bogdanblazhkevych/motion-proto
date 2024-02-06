@@ -46,7 +46,7 @@ export default function Menu() {
                         Idea Lab
                     </div>
                 </div>
-                <Link href="/dashboard/ecosystems" className={styles.linkwrapper}>
+                <Link href="/dashboard/ecosystems" className={`${styles.linkwrapper} ${pathname === '/dashboard/ecosystems' && styles.linkwrapperactive}`}>
                     <div className={styles.linkIcon}>
                         <MdConnectWithoutContact />
                     </div>

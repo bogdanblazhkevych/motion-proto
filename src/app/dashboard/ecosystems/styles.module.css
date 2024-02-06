@@ -1,0 +1,15 @@
+.ecosystemswrapper {
+    /* border: 1px solid blue; */
+    flex: 1;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 15px;
+}
+
+.boxone {
+    grid-area: 1 / 1 / 3 / 3;
+    overflow: hidden;
+}
